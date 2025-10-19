@@ -17,7 +17,6 @@
             background-repeat: no-repeat;
             background-color: black;
         }
-
         .stars-background {
             position: fixed;
             top: 0;
@@ -27,7 +26,6 @@
             overflow: hidden;
             z-index: 0;
         }
-
         .stars-background::before,
         .stars-background::after,
         .stars-background .star {
@@ -39,42 +37,36 @@
             box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.8);
             animation: shooting-star linear infinite;
         }
-
         .stars-background::before {
             top: 10%;
             left: 20%;
             animation-duration: 3s;
             animation-delay: 0s;
         }
-
         .stars-background::after {
             top: 30%;
             left: 60%;
             animation-duration: 5s;
             animation-delay: 2s;
         }
-
         .stars-background .star:nth-child(1) {
             top: 50%;
             left: 10%;
             animation-duration: 4s;
             animation-delay: 1s;
         }
-
         .stars-background .star:nth-child(2) {
             top: 70%;
             left: 80%;
             animation-duration: 6s;
             animation-delay: 3s;
         }
-
         .stars-background .star:nth-child(3) {
             top: 20%;
             left: 40%;
             animation-duration: 5s;
             animation-delay: 4s;
         }
-
         @keyframes shooting-star {
             0% {
                 transform: translate(0, 0) scale(1);
@@ -88,7 +80,6 @@
                 opacity: 0;
             }
         }
-
         #newTopicContent {
             min-height: 100px;
             border: 1px solid #ccc;
@@ -98,12 +89,10 @@
             outline: none;
             position: relative;
         }
-
         #newTopicContent:focus {
             border-color: #3b82f6;
             box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
         }
-
         #newTopicContent img,
         #contentDisplay img,
         #newTopicContent video,
@@ -118,7 +107,6 @@
             color: #0000EE;
             text-decoration: underline;
         }
-
         #newTopicContent img.selected,
         #newTopicContent video.selected,
         #newTopicContent a.pdf-link.selected,
@@ -128,7 +116,6 @@
             border: 2px solid #3b82f6;
             box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
         }
-
         .delete-btn {
             position: absolute;
             top: 0;
@@ -147,7 +134,6 @@
             line-height: 20px;
             visibility: hidden;
         }
-
         #newTopicContent img:hover .delete-btn,
         #newTopicContent video:hover .delete-btn,
         #newTopicContent a.pdf-link:hover .delete-btn,
@@ -156,46 +142,37 @@
         #contentDisplay a.pdf-link:hover .delete-btn {
             visibility: visible;
         }
-
         #newTopicContent a,
         #contentDisplay a {
             color: #0000EE;
             text-decoration: underline;
         }
-
         #newTopicContent a:hover,
         #contentDisplay a:hover {
             color: #551A8B;
         }
-
-        /* Ensure bold text renders correctly */
         #newTopicContent b,
         #newTopicContent strong,
         #contentDisplay b,
         #contentDisplay strong {
             font-weight: 700 !important;
         }
-
         .toolbar {
             display: flex;
             gap: 0.5rem;
             margin-bottom: 0.5rem;
         }
-
         #videoInput {
             display: none;
         }
-
         button:disabled {
             background-color: #cccccc;
             cursor: not-allowed;
         }
-
         .floating-emoji {
             display: inline-block;
             animation: float 2s ease-in-out infinite;
         }
-
         @keyframes float {
             0% {
                 transform: translateY(0) rotate(0deg);
@@ -207,7 +184,6 @@
                 transform: translateY(0) rotate(0deg);
             }
         }
-
         .pdf-modal {
             display: none;
             position: fixed;
@@ -220,7 +196,6 @@
             justify-content: center;
             align-items: center;
         }
-
         .pdf-modal-content {
             background: white;
             padding: 1rem;
@@ -231,7 +206,6 @@
             overflow: auto;
             position: relative;
         }
-
         .pdf-modal-close {
             position: absolute;
             top: 0.5rem;
@@ -248,11 +222,9 @@
             cursor: pointer;
             font-size: 14px;
         }
-
         .pdf-modal-close:hover {
             background: #cc0000;
         }
-
         .pdf-viewer {
             width: 100%;
             height: 500px;
@@ -266,7 +238,6 @@
         <div class="star"></div>
         <div class="star"></div>
     </div>
-
     <!-- PDF Modal -->
     <div id="pdfModal" class="pdf-modal">
         <div class="pdf-modal-content">
@@ -274,27 +245,26 @@
             <div id="pdfViewer"></div>
         </div>
     </div>
-
     <div class="w-full max-w-2xl relative z-10">
         <div id="topicListView" class="block">
             <img src="hampton_logo.png" alt="Hampton by Hilton Logo" class="h-24 mx-auto mb-6">
-            <input 
-                type="text" 
-                id="searchInput" 
-                placeholder="Search for a task or keyword..." 
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search for a task or keyword..."
                 class="w-full p-3 mb-4 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
             <div class="bg-white p-4 mb-4 rounded-lg shadow-md">
                 <h2 class="text-xl font-semibold mb-2">Create New Topic</h2>
-                <input 
-                    type="text" 
-                    id="newTopicTitle" 
-                    placeholder="Enter topic title..." 
+                <input
+                    type="text"
+                    id="newTopicTitle"
+                    placeholder="Enter topic title..."
                     class="w-full p-2 mb-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 >
                 <div class="toolbar">
-                    <button 
-                        id="videoButton" 
+                    <button
+                        id="videoButton"
                         class="bg-gray-200 p-2 rounded-lg hover:bg-gray-300"
                         title="Upload Video or PDF"
                     >
@@ -302,13 +272,13 @@
                     </button>
                     <input type="file" id="videoInput" accept="video/*,application/pdf">
                 </div>
-                <div 
-                    id="newTopicContent" 
-                    contenteditable="true" 
+                <div
+                    id="newTopicContent"
+                    contenteditable="true"
                     class="w-full mb-2 text-gray-700"
                 ></div>
-                <button 
-                    id="createTopicBtn" 
+                <button
+                    id="createTopicBtn"
                     class="w-full bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-600"
                 >
                     Create Topic
@@ -316,12 +286,11 @@
             </div>
             <div id="topicsList" class="space-y-4"></div>
         </div>
-
         <div id="topicDetailsView" class="hidden">
             <div class="flex justify-between items-center mb-6">
                 <h1 id="topicTitle" class="text-3xl font-bold text-white"></h1>
-                <button 
-                    id="deleteButton" 
+                <button
+                    id="deleteButton"
                     class="text-red-500 hover:text-red-700"
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -332,15 +301,14 @@
             <div id="topicContent" class="bg-white p-4 rounded-lg shadow-md mb-4">
                 <div id="contentDisplay" class="text-gray-700"></div>
             </div>
-            <button 
-                id="backButton" 
+            <button
+                id="backButton"
                 class="w-full bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-600"
             >
                 Back to Task Guide
             </button>
         </div>
     </div>
-
     <script>
         // Initialize Firebase with updated configuration
         const firebaseConfig = {
@@ -354,7 +322,7 @@
         };
         firebase.initializeApp(firebaseConfig);
         const db = firebase.firestore();
-
+        
         const defaultTopics = [
             {
                 title: "How to Reset a Password",
@@ -369,80 +337,138 @@
                 content: 'Open the employee portal.<br>Go to \'Leave Requests\'.<br>Fill out the form and submit.<br>Note: Requests need 2 weeks\' notice.<br>Submit requests at <a href="https://example.com/leave" target="_blank">https://example.com/leave</a>'
             }
         ];
-
-        let topics = defaultTopics;
+        
+        let topics = [];
         let isOffline = false;
         let unsubscribeTopics = null;
 
-        function loadTopics() {
+        // *** REFACTORED: Load topics from individual documents ***
+        async function loadTopics() {
             try {
-                const docRef = db.collection("taskGuide").doc("topics");
-                unsubscribeTopics = docRef.onSnapshot(doc => {
-                    if (doc.exists) {
-                        topics = doc.data().topics || defaultTopics;
-                    } else {
-                        docRef.set({ topics: defaultTopics })
-                            .then(() => {
-                                topics = defaultTopics;
-                                renderTopics();
-                                attachPDFClickHandlers();
-                            })
-                            .catch(error => {
-                                console.error("Error initializing topics:", error);
-                                topics = defaultTopics;
-                                renderTopics();
-                                attachPDFClickHandlers();
-                            });
-                        return;
-                    }
-                    console.log("Topics updated in real-time:", topics.map(t => t.title));
-                    isOffline = false;
-                    renderTopics();
-                    attachPDFClickHandlers();
-                }, error => {
-                    console.error("Error listening to topics:", error);
-                    if (error.code === "unavailable") {
-                        isOffline = true;
-                        alert("Firestore is offline. Working in offline mode. Changes will sync when the connection is restored.");
-                    } else if (error.code === "invalid-argument" || error.code === "permission-denied") {
-                        alert("Firestore request failed: " + error.message + ". Please check your Firebase configuration and security rules.");
-                    } else {
-                        alert("An unexpected error occurred while listening to topics: " + error.message);
-                    }
-                    topics = defaultTopics;
-                    renderTopics();
-                    attachPDFClickHandlers();
+                const snapshot = await db.collection("taskGuide").get();
+                topics = [];
+                snapshot.forEach(doc => {
+                    topics.push({ id: doc.id, ...doc.data() });
                 });
+                
+                // If no topics exist, initialize with defaults
+                if (topics.length === 0) {
+                    await initializeDefaultTopics();
+                    return;
+                }
+                
+                console.log("Loaded topics from Firestore:", topics.map(t => t.title));
+                isOffline = false;
+                renderTopics();
+                attachPDFClickHandlers();
+                
             } catch (error) {
-                console.error("Error setting up topic listener:", error);
-                alert("An unexpected error occurred while setting up topic listener: " + error.message);
-                topics = defaultTopics;
+                console.error("Error loading topics:", error);
+                handleFirestoreError(error);
+                topics = defaultTopics.map((topic, index) => ({ id: `default-${index}`, ...topic }));
                 renderTopics();
                 attachPDFClickHandlers();
             }
         }
 
-        async function saveTopics() {
+        // *** NEW: Initialize default topics as individual documents ***
+        async function initializeDefaultTopics() {
             try {
-                const docRef = db.collection("taskGuide").doc("topics");
-                await docRef.set({ topics });
-                console.log("Saved topics to Firestore:", topics.map(t => t.title));
-                isOffline = false;
+                const batch = db.batch();
+                defaultTopics.forEach(topic => {
+                    const docRef = db.collection("taskGuide").doc();
+                    batch.set(docRef, topic);
+                });
+                await batch.commit();
+                console.log("Initialized default topics");
+                await loadTopics(); // Reload to get document IDs
             } catch (error) {
-                console.error("Error saving topics:", error);
-                if (error.code === "unavailable") {
-                    isOffline = true;
-                    alert("Firestore is offline. Changes will be saved locally and synced when the connection is restored.");
-                } else if (error.code === "invalid-argument" || error.code === "permission-denied") {
-                    alert("Firestore request failed: " + error.message + ". Please check your Firebase configuration and security rules.");
-                } else {
-                    alert("An unexpected error occurred while saving topics: " + error.message);
-                }
+                console.error("Error initializing default topics:", error);
+                topics = defaultTopics.map((topic, index) => ({ id: `default-${index}`, ...topic }));
+                renderTopics();
+                attachPDFClickHandlers();
             }
         }
 
-        let isSubmitting = false;
+        // *** REFACTORED: Real-time listener for individual documents ***
+        function setupRealtimeListener() {
+            if (unsubscribeTopics) unsubscribeTopics();
+            
+            unsubscribeTopics = db.collection("taskGuide")
+                .onSnapshot(snapshot => {
+                    topics = [];
+                    snapshot.forEach(doc => {
+                        topics.push({ id: doc.id, ...doc.data() });
+                    });
+                    console.log("Real-time topics updated:", topics.map(t => t.title));
+                    isOffline = false;
+                    renderTopics();
+                    attachPDFClickHandlers();
+                }, error => {
+                    console.error("Real-time listener error:", error);
+                    if (error.code === "unavailable") {
+                        isOffline = true;
+                        alert("Firestore is offline. Working in offline mode. Changes will sync when the connection is restored.");
+                    } else {
+                        handleFirestoreError(error);
+                    }
+                    // Keep local topics
+                    renderTopics();
+                    attachPDFClickHandlers();
+                });
+        }
 
+        // *** REFACTORED: Save new topic as individual document ***
+        async function saveNewTopic(title, content) {
+            try {
+                const docRef = await db.collection("taskGuide").add({
+                    title: title.trim().replace(/\s+/g, ' '),
+                    content
+                });
+                console.log("Created topic:", docRef.id);
+                isOffline = false;
+                return docRef.id;
+            } catch (error) {
+                console.error("Error creating topic:", error);
+                if (error.code === "unavailable") {
+                    isOffline = true;
+                    alert("Offline: Topic saved locally, will sync later.");
+                } else {
+                    handleFirestoreError(error);
+                }
+                throw error;
+            }
+        }
+
+        // *** REFACTORED: Delete individual topic document ***
+        async function deleteTopicById(topicId) {
+            try {
+                await db.collection("taskGuide").doc(topicId).delete();
+                console.log("Deleted topic:", topicId);
+                isOffline = false;
+            } catch (error) {
+                console.error("Error deleting topic:", error);
+                if (error.code === "unavailable") {
+                    isOffline = true;
+                    alert("Offline: Deletion will sync when online.");
+                } else {
+                    handleFirestoreError(error);
+                }
+                throw error;
+            }
+        }
+
+        // *** NEW: Error handler ***
+        function handleFirestoreError(error) {
+            if (error.code === "invalid-argument" || error.code === "permission-denied") {
+                alert("Firestore permission error: " + error.message + ". Check your Firebase rules.");
+            } else {
+                alert("Firestore error: " + error.message);
+            }
+        }
+
+        // *** Keep all existing functions unchanged ***
+        let isSubmitting = false;
         function fileToBase64(file) {
             return new Promise((resolve, reject) => {
                 const reader = new FileReader();
@@ -451,14 +477,12 @@
                 reader.readAsDataURL(file);
             });
         }
-
         function convertTextToLinks(text) {
             const urlRegex = /(https?:\/\/[^\s<]+)(?![^<]*>|[^<>]*<\/a>)/g;
             return text.replace(urlRegex, (url) => {
                 return `<a href="${url}" target="_blank">${url}</a>`;
             });
         }
-
         async function viewPDF(base64Data) {
             try {
                 const base64String = base64Data.split(',')[1];
@@ -468,28 +492,23 @@
                 for (let i = 0; i < len; i++) {
                     bytes[i] = binaryString.charCodeAt(i);
                 }
-
                 const pdf = await pdfjsLib.getDocument({ data: bytes }).promise;
                 const pdfViewer = document.getElementById("pdfViewer");
                 pdfViewer.innerHTML = "";
-
                 for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
                     const page = await pdf.getPage(pageNum);
                     const viewport = page.getViewport({ scale: 1.0 });
-
                     const canvas = document.createElement("canvas");
                     const context = canvas.getContext("2d");
                     canvas.height = viewport.height;
                     canvas.width = viewport.width;
                     pdfViewer.appendChild(canvas);
-
                     const renderContext = {
                         canvasContext: context,
                         viewport: viewport
                     };
                     await page.render(renderContext).promise;
                 }
-
                 const pdfModal = document.getElementById("pdfModal");
                 pdfModal.style.display = "flex";
             } catch (e) {
@@ -497,7 +516,6 @@
                 alert("Unable to render the PDF. You can download it by right-clicking the link and selecting 'Save link as...'.");
             }
         }
-
         function attachPDFClickHandlers() {
             const pdfLinks = document.querySelectorAll("a.pdf-link");
             pdfLinks.forEach(link => {
@@ -505,7 +523,6 @@
                 link.addEventListener("click", handlePDFClick);
             });
         }
-
         function handlePDFClick(e) {
             e.preventDefault();
             const link = e.target;
@@ -514,13 +531,13 @@
             viewPDF(base64Data);
         }
 
+        // Modal handlers (unchanged)
         const pdfModal = document.getElementById("pdfModal");
         const pdfModalClose = document.getElementById("pdfModalClose");
         pdfModalClose.addEventListener("click", () => {
             pdfModal.style.display = "none";
             document.getElementById("pdfViewer").innerHTML = "";
         });
-
         pdfModal.addEventListener("click", (e) => {
             if (e.target === pdfModal) {
                 pdfModal.style.display = "none";
@@ -528,11 +545,9 @@
             }
         });
 
+        // All existing editor event handlers (unchanged)
         const contentEditor = document.getElementById("newTopicContent");
-        contentEditor.addEventListener("dragover", (e) => {
-            e.preventDefault();
-        });
-
+        contentEditor.addEventListener("dragover", (e) => { e.preventDefault(); });
         contentEditor.addEventListener("drop", async (e) => {
             e.preventDefault();
             const files = e.dataTransfer.files;
@@ -592,28 +607,21 @@
             }
             attachPDFClickHandlers();
         });
-
+        // ... [All other existing event handlers remain EXACTLY the same] ...
         contentEditor.addEventListener("paste", (e) => {
             e.preventDefault();
             e.stopPropagation();
-
             const clipboardData = e.clipboardData || window.clipboardData;
             let html = clipboardData.getData("text/html");
             let text = clipboardData.getData("text/plain");
-
-            // Sanitize HTML if present
             if (html) {
                 const tempDiv = document.createElement("div");
                 tempDiv.innerHTML = html;
-
-                // Remove unsafe elements
                 const unsafeTags = ["script", "style", "iframe", "meta", "link"];
                 unsafeTags.forEach(tag => {
                     const elements = tempDiv.querySelectorAll(tag);
                     elements.forEach(el => el.remove());
                 });
-
-                // Only allow <b>, <strong>, <br>, and <a> tags
                 const allowedTags = ["b", "strong", "br", "a"];
                 const sanitizeNode = (node) => {
                     if (node.nodeType === Node.ELEMENT_NODE) {
@@ -650,7 +658,6 @@
                     }
                     return node;
                 };
-
                 const walkNodes = (node) => {
                     let child = node.firstChild;
                     while (child) {
@@ -665,13 +672,10 @@
                     }
                 };
                 walkNodes(tempDiv);
-
-                // Insert sanitized HTML using Selection API
                 const fragment = document.createDocumentFragment();
                 while (tempDiv.firstChild) {
                     fragment.appendChild(tempDiv.firstChild);
                 }
-
                 const selection = window.getSelection();
                 if (selection.rangeCount) {
                     const range = selection.getRangeAt(0);
@@ -682,7 +686,6 @@
                     contentEditor.appendChild(fragment);
                 }
             } else if (text) {
-                // Handle plain text
                 const convertedText = convertTextToLinks(text);
                 const fragment = document.createDocumentFragment();
                 const div = document.createElement("div");
@@ -690,7 +693,6 @@
                 while (div.firstChild) {
                     fragment.appendChild(div.firstChild);
                 }
-
                 const selection = window.getSelection();
                 if (selection.rangeCount) {
                     const range = selection.getRangeAt(0);
@@ -701,8 +703,6 @@
                     contentEditor.appendChild(fragment);
                 }
             }
-
-            // Handle images if present
             const items = clipboardData.items;
             for (const item of items) {
                 if (item.type.startsWith("image/")) {
@@ -738,78 +738,11 @@
             }
             attachPDFClickHandlers();
         });
-
-        contentEditor.addEventListener("keydown", (e) => {
-            if (e.key === "Backspace" || e.key === "Delete") {
-                const selection = window.getSelection();
-                if (selection.rangeCount) {
-                    const range = selection.getRangeAt(0);
-                    const startContainer = range.startContainer;
-                    const startOffset = range.startOffset;
-                    const endContainer = range.endContainer;
-                    const endOffset = range.endOffset;
-
-                    if (!range.collapsed) {
-                        const selectedNodes = range.cloneContents().querySelectorAll("video, img, a.pdf-link");
-                        if (selectedNodes.length > 0) {
-                            range.deleteContents();
-                            e.preventDefault();
-                            return;
-                        }
-                    }
-
-                    if (range.collapsed) {
-                        if (startContainer.nodeType === Node.TEXT_NODE) {
-                            if (startOffset === 0) {
-                                const previousSibling = startContainer.parentElement.previousSibling;
-                                if (previousSibling && (previousSibling.querySelector("video") || previousSibling.querySelector("img") || previousSibling.querySelector("a.pdf-link"))) {
-                                    previousSibling.remove();
-                                    e.preventDefault();
-                                    return;
-                                }
-                            }
-                            if (startOffset === startContainer.length) {
-                                const nextSibling = startContainer.parentElement.nextSibling;
-                                if (nextSibling && (nextSibling.querySelector("video") || nextSibling.querySelector("img") || nextSibling.querySelector("a.pdf-link"))) {
-                                    nextSibling.remove();
-                                    e.preventDefault();
-                                    return;
-                                }
-                            }
-                        }
-                        if (startContainer.nodeType === Node.ELEMENT_NODE && (startContainer.tagName === "VIDEO" || startContainer.tagName === "IMG" || (startContainer.tagName === "A" && startContainer.className === "pdf-link"))) {
-                            startContainer.parentElement.remove();
-                            e.preventDefault();
-                            return;
-                        }
-                    }
-                }
-            }
-        });
-
-        contentEditor.addEventListener("click", (e) => {
-            const target = e.target;
-            if (target.tagName === "VIDEO" || target.tagName === "IMG" || (target.tagName === "A" && target.className === "pdf-link")) {
-                const allMedia = contentEditor.querySelectorAll("video, img, a.pdf-link");
-                allMedia.forEach(element => element.classList.remove("selected"));
-                target.classList.add("selected");
-                const selection = window.getSelection();
-                selection.removeAllRanges();
-                const range = document.createRange();
-                range.selectNode(target);
-                selection.addRange(range);
-            } else {
-                const allMedia = contentEditor.querySelectorAll("video, img, a.pdf-link");
-                allMedia.forEach(element => element.classList.remove("selected"));
-            }
-        });
+        // [All other existing event handlers - keydown, click, etc. remain unchanged]
 
         const videoButton = document.getElementById("videoButton");
         const videoInput = document.getElementById("videoInput");
-        videoButton.addEventListener("click", () => {
-            videoInput.click();
-        });
-
+        videoButton.addEventListener("click", () => { videoInput.click(); });
         videoInput.addEventListener("change", async (e) => {
             const file = e.target.files[0];
             if (file) {
@@ -853,10 +786,10 @@
             attachPDFClickHandlers();
         });
 
+        // *** REFACTORED: Render function (now uses topic.id) ***
         function renderTopics(searchTerm = "") {
             const topicsList = document.getElementById("topicsList");
             topicsList.innerHTML = "";
-
             const filteredTopics = topics.filter(topic => {
                 if (!searchTerm) return true;
                 const lowerSearch = searchTerm.toLowerCase();
@@ -867,12 +800,10 @@
                 const contentMatch = textContent.includes(lowerSearch);
                 return titleMatch || contentMatch;
             });
-
             if (filteredTopics.length === 0) {
                 topicsList.innerHTML = '<p class="text-gray-500">No results found.</p>';
                 return;
             }
-
             filteredTopics.forEach((topic) => {
                 const topicDiv = document.createElement("div");
                 topicDiv.className = "bg-white p-4 rounded-lg shadow-md cursor-pointer hover:bg-gray-50";
@@ -891,16 +822,13 @@
             const topicDetailsView = document.getElementById("topicDetailsView");
             const topicTitle = document.getElementById("topicTitle");
             const contentDisplay = document.getElementById("contentDisplay");
-
             topicTitle.textContent = topic.title;
-            document.getElementById("deleteButton").setAttribute("data-title", topic.title);
-
+            document.getElementById("deleteButton").setAttribute("data-id", topic.id);
             if (!topic.content) {
                 contentDisplay.textContent = "No description available.";
             } else {
                 contentDisplay.innerHTML = topic.content;
             }
-
             topicListView.classList.add("hidden");
             topicDetailsView.classList.remove("hidden");
             attachPDFClickHandlers();
@@ -914,16 +842,15 @@
             renderTopics(document.getElementById("searchInput").value);
         }
 
-        function createTopic() {
+        // *** REFACTORED: Create topic ***
+        async function createTopic() {
             if (isSubmitting) {
                 console.log("Submission in progress, ignoring click.");
                 return;
             }
-
             isSubmitting = true;
             const createTopicBtn = document.getElementById("createTopicBtn");
             createTopicBtn.disabled = true;
-
             const titleInput = document.getElementById("newTopicTitle");
             const contentEditor = document.getElementById("newTopicContent");
             const title = titleInput.value.trim().replace(/\s+/g, ' ');
@@ -936,13 +863,10 @@
                 return;
             }
 
-            console.log("Current titles in topics array:", topics.map(t => t.title));
-            console.log("New title to be added:", title);
-
+            // Check for duplicate titles
             const isDuplicate = topics.some(topic => {
                 const existingTitle = topic.title ? topic.title.trim().replace(/\s+/g, ' ').toLowerCase() : "";
-                const newTitle = title.trim().replace(/\s+/g, ' ').toLowerCase();
-                console.log(`Comparing "${existingTitle}" with "${newTitle}"`);
+                const newTitle = title.toLowerCase();
                 return existingTitle === newTitle;
             });
 
@@ -953,66 +877,130 @@
                 return;
             }
 
-            topics.push({
-                title,
-                content
-            });
-
-            saveTopics();
-
-            setTimeout(() => {
+            try {
+                await saveNewTopic(title, content);
                 titleInput.value = "";
-                titleInput.setAttribute('value', '');
                 contentEditor.innerHTML = "";
+                console.log("Topic created successfully");
+            } catch (error) {
+                // Error already handled in saveNewTopic
+                console.log("Create failed, but form will clear anyway");
+                titleInput.value = "";
+                contentEditor.innerHTML = "";
+            } finally {
                 isSubmitting = false;
                 createTopicBtn.disabled = false;
-                console.log("Form cleared after submission. Title input value:", titleInput.value);
                 renderTopics();
-            }, 100);
+            }
         }
 
-        function deleteTopic(title) {
-            console.log(`Attempting to delete topic: ${title}`);
-            const confirmDelete = confirm(`Are you sure you want to delete "${title}"?`);
+        // *** REFACTORED: Delete topic by ID ***
+        async function deleteTopic(topicId) {
+            const topic = topics.find(t => t.id === topicId);
+            if (!topic) {
+                alert("Error: Topic not found.");
+                return;
+            }
+            const confirmDelete = confirm(`Are you sure you want to delete "${topic.title}"?`);
             if (confirmDelete) {
-                const index = topics.findIndex(topic => topic.title === title);
-                if (index !== -1) {
-                    topics.splice(index, 1);
-                    console.log(`Deleted topic: ${title}`);
-                    saveTopics();
+                try {
+                    await deleteTopicById(topicId);
                     goBack();
-                } else {
-                    alert("Error: Topic not found.");
+                } catch (error) {
+                    // Error already handled in deleteTopicById
+                    alert("Delete failed. Please try again.");
                 }
             }
         }
 
+        // Event listeners (updated for new data-id attribute)
         const createTopicBtn = document.getElementById("createTopicBtn");
-        createTopicBtn.removeEventListener("click", createTopic);
         createTopicBtn.addEventListener("click", createTopic);
-
         document.getElementById("searchInput").addEventListener("input", (e) => {
             renderTopics(e.target.value);
         });
-
         document.getElementById("backButton").addEventListener("click", goBack);
-
         document.getElementById("deleteButton").addEventListener("click", () => {
-            const title = document.getElementById("deleteButton").getAttribute("data-title");
-            if (title) {
-                deleteTopic(title);
+            const topicId = document.getElementById("deleteButton").getAttribute("data-id");
+            if (topicId) {
+                deleteTopic(topicId);
             } else {
                 alert("Error: No topic selected for deletion.");
             }
         });
 
-        // Initial load of topics with real-time listener
-        loadTopics();
+        // *** INITIALIZATION: Load + Setup Realtime ***
+        loadTopics().then(() => {
+            setupRealtimeListener();
+        });
 
-        // Cleanup listener on page unload
+        // Cleanup
         window.addEventListener("beforeunload", () => {
             if (unsubscribeTopics) {
                 unsubscribeTopics();
+            }
+        });
+
+        // Add missing event handlers that were in original (paste, keydown, click)
+        contentEditor.addEventListener("keydown", (e) => {
+            if (e.key === "Backspace" || e.key === "Delete") {
+                const selection = window.getSelection();
+                if (selection.rangeCount) {
+                    const range = selection.getRangeAt(0);
+                    const startContainer = range.startContainer;
+                    const startOffset = range.startOffset;
+                    const endContainer = range.endContainer;
+                    const endOffset = range.endOffset;
+                    if (!range.collapsed) {
+                        const selectedNodes = range.cloneContents().querySelectorAll("video, img, a.pdf-link");
+                        if (selectedNodes.length > 0) {
+                            range.deleteContents();
+                            e.preventDefault();
+                            return;
+                        }
+                    }
+                    if (range.collapsed) {
+                        if (startContainer.nodeType === Node.TEXT_NODE) {
+                            if (startOffset === 0) {
+                                const previousSibling = startContainer.parentElement.previousSibling;
+                                if (previousSibling && (previousSibling.querySelector("video") || previousSibling.querySelector("img") || previousSibling.querySelector("a.pdf-link"))) {
+                                    previousSibling.remove();
+                                    e.preventDefault();
+                                    return;
+                                }
+                            }
+                            if (startOffset === startContainer.length) {
+                                const nextSibling = startContainer.parentElement.nextSibling;
+                                if (nextSibling && (nextSibling.querySelector("video") || nextSibling.querySelector("img") || nextSibling.querySelector("a.pdf-link"))) {
+                                    nextSibling.remove();
+                                    e.preventDefault();
+                                    return;
+                                }
+                            }
+                        }
+                        if (startContainer.nodeType === Node.ELEMENT_NODE && (startContainer.tagName === "VIDEO" || startContainer.tagName === "IMG" || (startContainer.tagName === "A" && startContainer.className === "pdf-link"))) {
+                            startContainer.parentElement.remove();
+                            e.preventDefault();
+                            return;
+                        }
+                    }
+                }
+            }
+        });
+        contentEditor.addEventListener("click", (e) => {
+            const target = e.target;
+            if (target.tagName === "VIDEO" || target.tagName === "IMG" || (target.tagName === "A" && target.className === "pdf-link")) {
+                const allMedia = contentEditor.querySelectorAll("video, img, a.pdf-link");
+                allMedia.forEach(element => element.classList.remove("selected"));
+                target.classList.add("selected");
+                const selection = window.getSelection();
+                selection.removeAllRanges();
+                const range = document.createRange();
+                range.selectNode(target);
+                selection.addRange(range);
+            } else {
+                const allMedia = contentEditor.querySelectorAll("video, img, a.pdf-link");
+                allMedia.forEach(element => element.classList.remove("selected"));
             }
         });
     </script>
